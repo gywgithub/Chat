@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Chat Server</title>
+	<style type="text/css">
+	</style>
+</head>
+
+<body>
+	<div>
+		<h1>Chat Server</h1>
+	</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+	<script type="text/javascript">
+		// https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js
+
+		let socket = io()
+		setTimeout(() => {
+			socket.emit('chat message', '123')
+		}, 2000)
+
+		socket.on('receiveMsg', (msg) => {
+			console.log('msg 12: ', msg)
+		})
+		// io.on('connection', function (socket) {
+		// 	console.log('a user connected')
+		// 	socket.on('disconnect', function () {
+		// 		console.log('user disconnected')
+		// 	})
+		// })
+	</script>
+</body>
+
+</html>
